@@ -11,10 +11,11 @@ app/config.py
 
 # pytest cache
 .pytest_cache
-__pycache__
+__pycache__/
+*.pyc
 
 # database
 *.db
-instance
+instance/
 .vscode
 package-lock.json
