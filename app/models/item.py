@@ -2,9 +2,12 @@ from app.db import db
 from sqlalchemy.orm import Mapped,mapped_column,relationship
 from typing import List
 from sqlalchemy.ext.associationproxy import association_proxy
+from sqlalchemy_serializer import SerializerMixin
 
-class Item(db.Model):
+class Item(db.Model,SerializerMixin):
     __tablename__="items"
+
+    serialize_rules=("-reviews.item",)
 
     id:Mapped[int]=mapped_column(primary_key=True)
     name:Mapped[str]
